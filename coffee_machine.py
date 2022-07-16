@@ -31,17 +31,24 @@ resources = {
 }
 print(resources)
 type_of_coffe = input("What would you like? (espresso/latte/capuccino):")
-print("Pleas insert coins ")
-penny=float(input("how many pennies? "))
-nickel=float(input("how many nickles? "))
-dime=float(input("how many dimes? "))
-quarter=float(input("how many quarters? "))
+print(f'the cost of your coffee is  {MENU[type_of_coffe]["cost"]}')
+
+
 
 #the sum of your money
+
+print("Pleas insert coins ")
+penny = float(input("how many pennies? "))
+nickel = float(input("how many nickles? "))
+dime = float(input("how many dimes? "))
+quarter = float(input("how many quarters? "))
+
 total= penny * 0.01 + nickel * 0.05 + dime * 0.1 + quarter * 25
 print(total)
+
 print("your rest after purchase:")
 print(total - MENU[type_of_coffe]["cost"])
+
 # resources after making coffee
 
 for water in resources:
