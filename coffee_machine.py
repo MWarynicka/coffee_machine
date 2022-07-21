@@ -51,6 +51,7 @@ print(total - MENU[type_of_coffe]["cost"])
 
 # resources after making coffee
 
+# loop for water in coffee machine
 old = resources["water"]
 while True:
     type_of_coffe = input("What would you like? (espresso/latte/capuccino):")
@@ -63,7 +64,8 @@ while True:
     elif current_water < new :
         print("Not enough water")
         break
-
+        
+ 
 for milk in resources:
     old_milk= resources["milk"]
     new_milk= MENU[type_of_coffe]["ingredients"]["milk"]
