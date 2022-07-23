@@ -2,6 +2,7 @@ MENU = {
     "espresso": {
         "ingredients": {
             "water": 50,
+            "milk": 0
             "coffee": 18,
         },
         "cost": 1.5,
@@ -70,19 +71,15 @@ old_milk = 200
 while True:
     type_of_coffe = input("What would you like? (espresso/latte/cappuccino): ")
     new_milk = MENU[type_of_coffe]["ingredients"]["milk"]
+    print(f"Milk to preparation of this coffee {new_milk}")
     current_milk = old_milk - new_milk
     old_milk = current_milk
-    if type_of_coffe == "latte" or "cappuccino":
-
+    if type_of_coffe == "cappuccino" or "latte":
         if current_milk < new_milk and current_milk > 0:
-            print(f"rest milk {current_milk}")
+            print(f"Rest milk {current_milk}")
         elif current_milk <= 0:
-            print("not enough milk")
+            print("Not enough milk")
             break
-
-    else:
-        print("coffee without milk")
-        break
 
 for coffe in resources:
     old_coffe= resources["coffee"]
