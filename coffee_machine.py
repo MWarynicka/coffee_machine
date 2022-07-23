@@ -66,7 +66,7 @@ while True:
         print("Not enough water")
         break
         
- 
+# loop for milk in coffee machine 
 old_milk = 200
 while True:
     type_of_coffe = input("What would you like? (espresso/latte/cappuccino): ")
