@@ -80,10 +80,19 @@ while True:
         elif current_milk <= 0:
             print("Not enough milk")
             break
-
-for coffe in resources:
-    old_coffe= resources["coffee"]
+#  loop for coffee in coffee machine          
+            
+old_coffe= resources["coffee"]
+while True:
+    type_of_coffe = input("What would you like? (espresso/latte/cappuccino): ")
     new_coffe= MENU[type_of_coffe]["ingredients"]["coffee"]
     current_coffe= old_coffe - new_coffe
+    old_coffe = current_coffe
+    if current_coffe > new_coffe:
+        print(f"Rest coffee {current_coffe}")
+        continue
+    elif current_coffe < new_coffe:
+        print("no coffee")
+        break
 
 print(f"water= {current_water}, milk= {current_milk}, coffee= {current_coffe}")
